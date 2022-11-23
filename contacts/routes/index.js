@@ -11,6 +11,7 @@ router.get('/', function(req, res) {
       res.render('index', { error: 'Database connection failure! '+err.stack, contacts: null, title: 'Contact List' });
     }
 
+  
     // 'contacts' table does not exist. Show an empty table.
     else if(results.rows[0].exists == false) {
       res.render('index', { error: null, contacts: null, title: 'Contact List' });
